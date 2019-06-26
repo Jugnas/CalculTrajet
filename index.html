@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Trajet de l'objet</title>
+</head>
+<body>
+	<h1 style="text-align: center;">Trajet de l'objet</h1>
+	<p><label for="vitesse">Vitesse de pointe: <input type="number" id="vitesse" value="0" min="0" max="140"> en km/h </label></p>
+	<p><label for="temps">Temps de stabilisation: <input type="number" id="temps" value="0" min="0"> en s </label></p>
+	<p><label for="distance">Distance parcourue: <input type="number" id="distance" value="0" min="0" step="0.001"> en km </label></p>
+	<input type="button" id="btnVitesse" value="Ajuster Vitesse"> <input type="button" id="btnTemps" value="Ajuster Temps"></input> <input type="button" id="btnDistance" value="Ajuster Distance"></input>
+	<script type="text/javascript">
+		let btnVitesse = document.getElementById('btnVitesse');
+		let vitesse = document.getElementById('vitesse');
+		let v = vitesse.value;
+		vitesse.setAttribute("value", 8);
+		console.log(v);
+		let btnTemps = document.getElementById('btnTemps');
+		let temps = document.getElementById('temps');
+		let t = temps.value;
+		console.log(t);
+		let btnDistance = document.getElementById('btnDistance');
+		let distance = document.getElementById('distance');
+		let d = distance.value;
+		console.log(d);
+		btnVitesse.onclick = function() {
+			v = d/(t/3600);
+			console.log(v);
+			let vitesse = document.getElementById('vitesse');
+			vitesse.setAttribute("value", v);
+		}
+		btnTemps.onclick = function() {
+			t = v/d*3600;
+			console.log(t);
+			let temps = document.getElementById('temps');
+			temps.setAttribute("value", t);
+		}
+		btnDistance.onclick = function() {
+			d = v*t/3600;
+			console.log(d);
+			let distance = document.getElementById('distance');
+			distance.setAttribute("value", d);
+		}
+	</script>
+</body>
+</html>
