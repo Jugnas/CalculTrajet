@@ -1,0 +1,46 @@
+Démarche du programme:
+Objectif -> Pouvoir calculer : -la distance parcourue de l'objet durant ce trajet
+			       -la vitesse maximale de l'objet durant ce trajet
+			       -le temps de stabilisation de l'objet durant ce trajet
+
+Paramètres nécessaires (en 2 phases) : 1/ -vitesse maximale
+					  -distance parcourue
+					  -temps de stabilisation
+
+				       2/ -accélération
+					  -freinage
+
+1ère phase: Cas d'un objet maintenant une vitesse uniforme
+
+Formules générique des paramètres: 
+vitesse = distance/temps
+
+On en déduit que:
+temps = vitesse/distance 
+et 
+distance = vitesse*temps
+
+Unité des paramètres(arbitraire):
+vitesse en km/h
+distance en km
+temps en s
+
+Or il y a un problème => le temps est en s mais la vitesse en km/h
+Il faut donc convertir le temps en h
+
+On sait que 1h = 60min et que 1min = 60s
+Donc 1h = 60*60s = 3600s => 1s = 1/3600h
+
+Le temps est en s/3600 h
+
+Dans ce cas-là on obtient:
+
+v(km/h) = d(km)/(t(s)/3600)
+d(km) = v(km/h)*t(s)/3600
+t(s)/3600 = v(km/h)/d(km) <=> t(s) = v(km/h)/d(km)*3600
+
+Programme informatique (en JS):
+1/Mettre le contenu HTML : a)Mettre un titre (onglet + page)
+			   b)Insérer les champs correspondant aux paramètres (champs numériques)
+			   c)Mettre des bouton de conversion (deux boutons par paramètres
+2/
